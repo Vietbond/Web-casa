@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chào mừng đến với CASA Architecture</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; /* Chiều cao tối thiểu bằng chiều cao viewport */
+            margin: 0;
+            background-color: #f0f0f0; /* Màu nền nhẹ nhàng */
+            font-family: Arial, sans-serif;
+            overflow: hidden; /* Tránh thanh cuộn */
+            flex-direction: column; /* Sắp xếp logo và text theo cột */
+            text-align: center;
+            padding: 20px; /* Thêm padding để nội dung không bị sát mép */
+            box-sizing: border-box; /* Bao gồm padding trong chiều rộng/cao */
+        }
+
+        .splash-logo {
+            margin-bottom: 20px; /* Khoảng cách dưới logo */
+            opacity: 0; /* Bắt đầu ẩn */
+            animation: fadeIn 1s forwards; /* Hiệu ứng mờ dần hiện ra */
+            animation-delay: 0.5s; /* Bắt đầu sau 0.5s */
+        }
+
+        .splash-logo img {
+            max-width: 200px; /* Kích thước logo */
+            height: auto;
+            display: block; /* Loại bỏ khoảng trắng dưới ảnh */
+            margin: 0 auto; /* Canh giữa logo */
+        }
+
+        .welcome-message {
+            font-size: 1.2em;
+            color: #555;
+            margin-bottom: 30px; /* Khoảng cách dưới tin nhắn chào mừng */
+            opacity: 0; /* Bắt đầu ẩn */
+            animation: fadeIn 1s forwards; /* Hiệu ứng mờ dần hiện ra */
+            animation-delay: 1.5s; /* Bắt đầu sau 1.5s (sau logo) */
+        }
+
+        .start-button {
+            background-color: #007bff; /* Màu nền nút */
+            color: white; /* Màu chữ nút */
+            padding: 12px 25px; /* Kích thước nút */
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            cursor: pointer; /* Biểu tượng con trỏ khi di chuột */
+            transition: background-color 0.3s ease, transform 0.2s ease; /* Hiệu ứng chuyển động */
+            opacity: 0; /* Bắt đầu ẩn */
+            animation: fadeIn 1s forwards; /* Hiệu ứng mờ dần hiện ra */
+            animation-delay: 2.5s; /* Bắt đầu sau 2.5s (sau tin nhắn) */
+        }
+
+        .start-button:hover {
+            background-color: #0056b3; /* Màu nền khi di chuột qua */
+            transform: translateY(-2px); /* Hiệu ứng nhấc nhẹ nút */
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="splash-logo">
+        <img src="ten_file_logo_cua_ban.jpg" alt="Logo CASA Architecture">
+    </div>
+    <div class="welcome-message">
+        Chào mừng bạn đến với Công ty Cổ phần Tư vấn Thiết kế và Kiến trúc CASA
+    </div>
+    <button class="start-button" id="startButton">Bắt đầu</button>
+
+    <script>
+        // Lắng nghe sự kiện click trên nút "Bắt đầu"
+        document.getElementById('startButton').addEventListener('click', function() {
+            // Chuyển hướng đến trang chính của bạn
+            // Nếu trang chính của bạn là index.html:
+            window.location.href = 'index.html'; 
+            
+            // HOẶC nếu bạn đã đổi index.html cũ thành main.html:
+            // window.location.href = 'main.html';
+        });
+    </script>
+</body>
+</html>
